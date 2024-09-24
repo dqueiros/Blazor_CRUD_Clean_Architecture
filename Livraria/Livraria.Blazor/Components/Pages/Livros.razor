@@ -1,5 +1,5 @@
 ﻿@page "/livros"
-@attribute [StreamRendering]
+@* @rendermode InteractiveServer  interação a nível de página*@ 
 
 <h3>Catálogo</h3>
 
@@ -15,7 +15,7 @@ else
     <div class="row">
         @foreach (var livro in livros)
         {
-            <LivrosCard Livro="@livro" />
+            <LivrosCard @rendermode="InteractiveServer" Livro="@livro" /> @* @rinteração a nível de componente*@
         }
     </div>
 }
